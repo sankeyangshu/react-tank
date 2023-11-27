@@ -1,3 +1,3 @@
-# react-tank
+# tank-ts
 
-使用 react 开发坦克游戏
+使用 Canvas + TS 编写坦克游戏
