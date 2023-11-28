@@ -3,7 +3,13 @@ import { imageMap } from '@/utils/image';
 import modelAbstract from './modelAbstract';
 
 export default class steel extends modelAbstract implements modelType {
-  render(): void {
-    super.drawModel(imageMap.get('steel')!);
+  name = 'steel';
+
+  image(): HTMLImageElement {
+    return imageMap.get('steel')!;
+  }
+
+  render() {
+    super.drawModel();
   }
 }

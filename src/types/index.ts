@@ -18,4 +18,7 @@ export interface modelAbstractType {
  */
 export interface modelType {
   render(): void;
+  x: number;
+  y: number;
+  image(): HTMLImageElement;
 }
