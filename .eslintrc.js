@@ -31,6 +31,7 @@ module.exports = {
     '@typescript-eslint/no-explicit-any': 'off', // 禁止使用 any 类型
     '@typescript-eslint/ban-types': 'off', // 禁止使用特定类型
     '@typescript-eslint/no-non-null-assertion': 'off', // 不允许使用后缀运算符的非空断言(!)
+    'no-constant-condition': 'off', // 禁止在条件中使用常量表达式
     'simple-import-sort/imports': [
       'error',
       {

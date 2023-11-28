@@ -3,11 +3,16 @@ import strawModel from '@/models/straw';
 import canvas from './canvas';
 
 class straw extends canvas {
-  constructor() {
-    super();
-    super.createModel(modelConfig.strawNum, strawModel);
+  num() {
+    return modelConfig.strawNum;
   }
-  render(): void {
+
+  model() {
+    return strawModel;
+  }
+
+  render() {
+    super.createModel();
     super.renderModels();
   }
 }

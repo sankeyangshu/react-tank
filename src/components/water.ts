@@ -3,11 +3,16 @@ import waterModel from '@/models/water';
 import canvas from './canvas';
 
 class water extends canvas {
-  constructor() {
-    super();
-    super.createModel(modelConfig.waterNum, waterModel);
+  num() {
+    return modelConfig.waterNum;
   }
-  render(): void {
+
+  model() {
+    return waterModel;
+  }
+
+  render() {
+    super.createModel();
     super.renderModels();
   }
 }

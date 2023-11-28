@@ -3,11 +3,16 @@ import steelModel from '@/models/steel';
 import canvas from './canvas';
 
 class steel extends canvas {
-  constructor() {
-    super();
-    super.createModel(modelConfig.steelNum, steelModel);
+  num() {
+    return modelConfig.steelNum;
   }
-  render(): void {
+
+  model() {
+    return steelModel;
+  }
+
+  render() {
+    super.createModel();
     super.renderModels();
   }
 }

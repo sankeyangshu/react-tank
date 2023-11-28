@@ -3,11 +3,16 @@ import wallModel from '@/models/wall';
 import canvas from './canvas';
 
 class wall extends canvas {
-  constructor() {
-    super();
-    super.createModel(modelConfig.wallNum, wallModel);
+  num() {
+    return modelConfig.wallNum;
   }
-  render(): void {
+
+  model() {
+    return wallModel;
+  }
+
+  render() {
+    super.createModel();
     super.renderModels();
   }
 }

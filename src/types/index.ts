@@ -10,7 +10,7 @@ export interface positionType {
  * 模型父类接口类型
  */
 export interface modelAbstractType {
-  new (canvas: CanvasRenderingContext2D, x: number, y: number): modelType;
+  new (x: number, y: number): modelType;
 }
 
 /**
@@ -20,5 +20,14 @@ export interface modelType {
   render(): void;
   x: number;
   y: number;
+  width: number;
+  height: number;
   image(): HTMLImageElement;
+}
+
+/**
+ * 画布接口
+ */
+export interface canvasType {
+  canvasCtx: CanvasRenderingContext2D;
 }

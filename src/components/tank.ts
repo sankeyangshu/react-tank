@@ -1,24 +1,29 @@
 import { canvasConfig, modelConfig } from '@/config';
 import tankModel from '@/models/tank';
-import { modelAbstractType } from '@/types';
 import position from '@/utils/position';
 import canvas from './canvas';
 
 class tank extends canvas {
-  constructor() {
-    super();
+  num() {
+    return modelConfig.tankNum;
   }
-  render(): void {
-    this.createModel(modelConfig.tankNum, tankModel);
+
+  model() {
+    return tankModel;
+  }
+
+  render() {
+    this.createModel();
     this.renderModels();
 
     setInterval(() => this.renderModels(), modelConfig.timeout);
   }
 
-  protected createModel(num: number, model: modelAbstractType) {
-    for (let i = 0; i < num; i++) {
+  protected createModel() {
+    for (let i = 0; i < this.num(); i++) {
       const pos = position.getRandomPosition();
-      const instance = new model(this.canvasCtx, pos.x, 0);
+      const model = this.model();
+      const instance = new model(pos.x, 0);
       this.models.push(instance);
     }
   }

@@ -3,14 +3,16 @@ import { modelAbstractType, modelType } from '@/types';
 import position from '@/utils/position';
 
 export default abstract class canvas {
-  protected models: modelType[] = [];
+  public models: modelType[] = [];
 
+  abstract num(): number;
+  abstract model(): modelAbstractType;
   abstract render(): void;
 
   constructor(
     protected app = document.querySelector('#app') as HTMLDivElement,
     protected el = document.createElement('canvas'),
-    protected canvasCtx = el.getContext('2d')!
+    public canvasCtx = el.getContext('2d')!
   ) {
     // 初始化画布
     this.createCanvas();
@@ -27,9 +29,10 @@ export default abstract class canvas {
   }
 
   // 创建模型
-  protected createModel(num: number, model: modelAbstractType) {
-    position.drawPositionModels(num).forEach((position) => {
-      const instance = new model(this.canvasCtx, position.x, position.y);
+  protected createModel() {
+    position.drawPositionModels(this.num()).forEach((position) => {
+      const model = this.model();
+      const instance = new model(position.x, position.y);
       this.models.push(instance);
     });
   }
