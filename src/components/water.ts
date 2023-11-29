@@ -17,4 +17,4 @@ class water extends canvas {
   }
 }
 
-export default new water();
+export default new water('water');

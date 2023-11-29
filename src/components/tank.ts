@@ -35,4 +35,4 @@ class tank extends canvas {
   }
 }
 
-export default new tank();
+export default new tank('tank');

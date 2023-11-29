@@ -10,6 +10,7 @@ export default abstract class canvas {
   abstract render(): void;
 
   constructor(
+    protected name: string,
     protected app = document.querySelector('#app') as HTMLDivElement,
     protected el = document.createElement('canvas'),
     public canvasCtx = el.getContext('2d')!
@@ -23,6 +24,9 @@ export default abstract class canvas {
     // 设置canvas宽高
     this.el.width = canvasConfig.width;
     this.el.height = canvasConfig.height;
+
+    // 设置canvas名字
+    this.el.setAttribute('name', this.name);
 
     // 将canvas插入到根节点
     this.app.insertAdjacentElement('afterbegin', this.el);

@@ -17,4 +17,4 @@ class steel extends canvas {
   }
 }
 
-export default new steel();
+export default new steel('steel');

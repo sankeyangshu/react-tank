@@ -3,6 +3,8 @@ import strawModel from '@/models/straw';
 import canvas from './canvas';
 
 class straw extends canvas {
+  name = 'straw';
+
   num() {
     return modelConfig.strawNum;
   }
@@ -17,4 +19,4 @@ class straw extends canvas {
   }
 }
 
-export default new straw();
+export default new straw('straw');

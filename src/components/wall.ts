@@ -17,4 +17,4 @@ class wall extends canvas {
   }
 }
 
-export default new wall();
+export default new wall('wall');

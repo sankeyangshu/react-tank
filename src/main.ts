@@ -1,3 +1,4 @@
+import bullet from '@/components/bullet'; // 导入子弹模型
 import steel from '@/components/steel'; // 导入不可破坏墙模型
 import straw from '@/components/straw'; // 导入草地模型
 import wall from '@/components/wall'; // 导入可破坏墙模型
@@ -20,6 +21,7 @@ async function bootstrap() {
   water.render();
   steel.render();
   tank.render();
+  bullet.render();
 }
 
 void bootstrap();

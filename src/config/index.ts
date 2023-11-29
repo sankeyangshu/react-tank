@@ -1,3 +1,4 @@
+import bullet from '@/assets/images/bullet/bullet.jpg';
 import straw from '@/assets/images/straw/straw.png';
 import tankBottom from '@/assets/images/tank/bottom.gif';
 import tankLeft from '@/assets/images/tank/left.gif';
@@ -41,4 +42,5 @@ export const imagesConfig = {
   tankLeft,
   tankRight,
   tankTop,
+  bullet,
 };
